@@ -1,0 +1,25 @@
+:root {
+  font-size: 200px;
+}
+
+.gameBoard {
+  border: black solid 10px;
+  margin: auto;
+  width: 930px;
+  height: 930px;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 300px;
+  height: 300px;
+  border: black solid 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
