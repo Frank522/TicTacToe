@@ -3,23 +3,63 @@
 }
 
 .gameBoard {
-  border: black solid 10px;
+  border: black solid 20px;
   margin: auto;
   width: 930px;
   height: 930px;
   display: flex;
   flex-direction: column;
+  border-radius: 150px;
+  background-color: rgb(223, 219, 21);
+  justify-content: space-around;
 }
 
 .row {
   display: flex;
+  justify-content: space-around;
 }
 
 .cell {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   border: black solid 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 120px;
+  background-color: cyan;
+}
+
+.cell[value="X"] {
+  background-color: blue;
+}
+
+.cell[value="O"] {
+  background-color: purple;
+}
+
+button {
+  width: 300px;
+  height: 300px;
+  border: black solid 5px;
+  border-radius: 62px;
+  font-size: 50px;
+  margin: 50px;
+}
+
+button:hover {
+  background-color: rgb(214, 213, 213);
+  transform: scale(1.1);
+}
+
+.select {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+h1 {
+  margin: auto;
 }
