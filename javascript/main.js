@@ -62,7 +62,7 @@ const GameBoard = (() => {
             }
             if(grid[winArray[i][0]] == 'O' && grid[winArray[i][1]] == 'O' && grid[winArray[i][2]] == 'O'){
                 result.value = true;
-                result.winner = 'X';
+                result.winner = 'O';
                 result.winCells = winArray[i];
                 return result;
             }
@@ -79,7 +79,7 @@ const GameBoard = (() => {
         });
     }
 
-    return {isWin, initialize, reset, changeTurn};
+    return {isEnd, initialize, reset, changeTurn};
 })();
 
 
@@ -121,13 +121,19 @@ const Game = ((Player1, Player2) => {
 
     const determineResult = () => {
         result = GameBoard.isEnd();
-        if(result.value){
-            alert(result.winner + ' is the winner!');
-            GameBoard.reset();
-            
-        }
+        setTimeout(() => {
+            if(result.value){
+                alert(result.winner + ' is the winner!');
+                newGame();
+            }
+        }, 1000);
+
+    }
+    
+    const newGame = () => {
+        select.style.display = "flex";
+        GameBoard.reset();
     }
 
-
-    return;
-})(Player('X', 'Michael'), Player('0', 'Chris'));
+    return{};
+})();
